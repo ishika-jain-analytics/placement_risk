@@ -20,13 +20,14 @@
 
 <svg width="180" height="180">
 <circle cx="90" cy="90" r="75" class="bg-ring"></circle>
+
 <circle cx="90" cy="90" r="75"
         class="progress-ring-circle {{ result.risk|lower }}"
         id="progressRing"></circle>
 </svg>
 
 <div class="progress-text">
-<h1 id="percentText">{{ percent }}%</h1>
+<h1 id="percentText">{{ risk_percent }}%</h1>
 <p class="risk {{ result.risk|lower }}">{{ result.risk }} RISK</p>
 </div>
 
@@ -77,8 +78,9 @@ Download Report
 
 </div>
 
+<!-- ✅ FIXED SCRIPT -->
 <script>
-const percent = {{ percent }};
+const percent = {{ risk_percent }};
 const risk = "{{ result.risk }}";
 </script>
 
