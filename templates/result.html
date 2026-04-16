@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body class="bg">
+
+<div class="main-container">
+
+<!-- HERO -->
+<div class="hero">
+
+<div class="progress-container">
+
+<svg width="180" height="180">
+<circle cx="90" cy="90" r="75" class="bg-ring"></circle>
+<circle cx="90" cy="90" r="75"
+        class="progress-ring-circle {{ result.risk|lower }}"
+        id="progressRing"></circle>
+</svg>
+
+<div class="progress-text">
+<h1 id="percentText">{{ percent }}%</h1>
+<p class="risk {{ result.risk|lower }}">{{ result.risk }} RISK</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- CARDS -->
+<div class="cards">
+
+<div class="card">
+<h5>Timeline</h5>
+<h2>{{ result.timeline }}</h2>
+<p>Estimated placement duration</p>
+</div>
+
+<div class="card">
+<h5>Salary</h5>
+<h2>{{ result.salary }}</h2>
+<p>Expected range</p>
+</div>
+
+<div class="card">
+<h5>Recommendation</h5>
+<p>{{ result.recommendation }}</p>
+</div>
+
+</div>
+
+<!-- CHARTS -->
+<div class="charts">
+
+<div class="chart-box">
+<canvas id="pieChart"></canvas>
+</div>
+
+<div class="chart-box">
+<canvas id="barChart"></canvas>
+</div>
+
+</div>
+
+<div class="btn-center">
+<a href="/download?risk={{result.risk}}" class="btn-custom">
+Download Report
+</a>
+</div>
+
+</div>
+
+<script>
+const percent = {{ percent }};
+const risk = "{{ result.risk }}";
+</script>
+
+<script src="/static/js/main.js"></script>
+
+</body>
+</html>

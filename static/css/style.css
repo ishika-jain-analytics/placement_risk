@@ -1,0 +1,116 @@
+body.bg {
+    font-family: 'Poppins';
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+/* CONTAINER */
+.main-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.progress-container {
+    position: relative;
+    width: 180px;
+    margin: auto;
+}
+
+circle {
+    fill: none;
+    stroke-width: 10;
+}
+
+.bg-ring {
+    stroke: rgba(255,255,255,0.1);
+}
+
+/* RISK COLORS */
+.progress-ring-circle.low { stroke: #00ff88; }
+.progress-ring-circle.medium { stroke: #ff9800; }
+.progress-ring-circle.high { stroke: #ff4d4d; }
+
+.progress-ring-circle {
+    stroke-linecap: round;
+    stroke-dasharray: 471;
+    stroke-dashoffset: 471;
+    transition: stroke-dashoffset 1.5s ease;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.risk.low { color: #00ff88; text-shadow: 0 0 15px #00ff88; }
+.risk.medium { color: #ff9800; text-shadow: 0 0 15px #ff9800; }
+.risk.high { color: #ff4d4d; text-shadow: 0 0 15px #ff4d4d; }
+
+/* CARDS */
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    padding: 25px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* CHARTS */
+.charts {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.chart-box {
+    flex: 1;
+    min-width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+/* BUTTON */
+.btn-center {
+    text-align: center;
+}
+
+.btn-custom {
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0,198,255,0.6);
+}
